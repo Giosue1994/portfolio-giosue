@@ -1,0 +1,36 @@
+.banner {
+  height: 100vh;
+  margin: 0;
+  padding: 260px 0 100px 0;
+  background-image: url("../assets/banner-bg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .content {
+    color: #fff;
+    h2 {
+      font-size: 40px;
+    }
+  }
+
+  .banner-image {
+    img {
+      width: 100%;
+      display: block;
+      animation: noGravity 3s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes noGravity {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
