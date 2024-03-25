@@ -1,0 +1,42 @@
+.skills {
+  text-align: center;
+  color: #fff;
+
+  .skills-box {
+    background-color: #18181e;
+    padding: 50px;
+    border-radius: 30px;
+    position: relative;
+    margin-top: -50px;
+
+    .skills-slider {
+      padding-top: 50px;
+
+      .skill-item {
+        padding-bottom: 50px;
+
+        svg {
+          transform: rotate(-90deg);
+        }
+
+        circle {
+          margin: 20px auto;
+          stroke-width: 15px;
+          stroke-linecap: round;
+          //   fill: #07070c;
+          fill: transparent;
+        }
+
+        text {
+          top: 50%;
+          left: 50%;
+          transform: rotate(90deg) translate(-13px, -185px);
+        }
+
+        p {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

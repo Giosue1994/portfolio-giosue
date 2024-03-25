@@ -33,3 +33,22 @@ export const SOCIAL = [
     icon: faInstagram,
   },
 ];
+
+export const SKILLS = [
+  {
+    name: "React",
+    level: 0.7,
+  },
+  {
+    name: "Wordpress",
+    level: 0.8,
+  },
+  {
+    name: "Javascript",
+    level: 0.7,
+  },
+  {
+    name: "PHP",
+    level: 0.6,
+  },
+];
