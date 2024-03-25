@@ -18,6 +18,11 @@ body {
   // background-attachment: fixed;
 }
 
+img {
+  width: 100%;
+  display: block;
+}
+
 .active-menu-indicator {
   position: absolute;
   bottom: -2px;
