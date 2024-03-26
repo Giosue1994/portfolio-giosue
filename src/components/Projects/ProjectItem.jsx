@@ -6,7 +6,6 @@ export default function ProjectItem({ project }) {
   return (
     <Col xs={12} md={4} className={classes["project-box"]}>
       <motion.div
-        key="list"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ y: -50, opacity: 0 }}

@@ -4,7 +4,7 @@ import classes from "./ProjectsTabs.module.scss";
 function Tab({ onSelect, children, isSelected }) {
   return (
     <li
-      className={isSelected ? `${classes.selected}` : undefined}
+      className={isSelected ? classes.selected : undefined}
       onClick={onSelect}
     >
       {children}

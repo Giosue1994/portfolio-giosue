@@ -23,6 +23,59 @@ img {
   display: block;
 }
 
+.social-icons {
+  padding: 0;
+  justify-content: end;
+  li {
+    margin-left: 10px;
+    margin-right: 0px;
+    font-size: 16px;
+    color: #fff;
+
+    a {
+      width: 35px;
+      height: 35px;
+      background: rgba(217, 217, 217, 0.1);
+      display: inline-flex;
+      border-radius: 50%;
+      margin-right: 6px;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: #fff;
+
+      &:before {
+        content: "";
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        background-color: #ffffff;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 0.3s ease-in-out;
+      }
+
+      &:hover {
+        &::before {
+          transform: scale(1);
+        }
+
+        svg {
+          filter: brightness(0) saturate(100%) invert(0%) sepia(7%)
+            saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+        }
+      }
+    }
+
+    svg {
+      width: 40%;
+      z-index: 1;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
 .active-menu-indicator {
   position: absolute;
   bottom: -2px;

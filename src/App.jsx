@@ -1,4 +1,5 @@
 import Banner from "./components/Banner";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills";
@@ -12,6 +13,7 @@ function App() {
         <Skills />
         <Projects />
       </main>
+      <Footer />
     </>
   );
 }
