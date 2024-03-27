@@ -1,8 +1,6 @@
 import { useRef, useEffect } from "react";
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Container, Row, Col } from "react-bootstrap";
 
 import { register } from "swiper/element/bundle";
 import { motion } from "framer-motion";

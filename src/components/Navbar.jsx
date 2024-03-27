@@ -99,7 +99,8 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <motion.button
+          <motion.a
+            href="#contacts"
             whileHover={{
               boxShadow: "0px 0px 10px 0px rgba(0,0,0,.5)",
               scale: 1.05,
@@ -107,7 +108,7 @@ export default function Navbar() {
             className={classes["contact-button"]}
           >
             Contact me
-          </motion.button>
+          </motion.a>
         </div>
       </motion.header>
     </AnimatePresence>

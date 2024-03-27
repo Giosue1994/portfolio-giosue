@@ -1,0 +1,60 @@
+.contacts {
+  background: linear-gradient(
+    90.21deg,
+    rgba(184, 202, 239, 0.7) -5.91%,
+    rgba(70, 105, 180, 0.7) 111.58%
+  );
+  padding: 60px 0 60px 0;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 30px;
+  margin-bottom: -50px;
+  position: relative;
+  backdrop-filter: blur(30px);
+
+  h2 {
+    color: #fff;
+    margin-bottom: 30px;
+  }
+
+  form {
+    color: #fff;
+
+    .control {
+      margin-bottom: 20px;
+
+      span {
+        margin-left: 10px;
+      }
+    }
+
+    .submit {
+      button {
+        padding: 10px 30px;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+        font-size: 18px;
+        color: #fff;
+        background-color: #18181e;
+      }
+    }
+
+    .status {
+      background-color: #fff;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 50px;
+      text-align: center;
+      p {
+        margin: 0;
+      }
+      .error {
+        color: #bf0707;
+      }
+      .success {
+        color: #5ba000;
+      }
+    }
+  }
+}

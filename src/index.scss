@@ -10,12 +10,25 @@ body {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(34, 33, 53);
-  // background-image: url("../src/assets/banner-bg.jpg");
-  // background-position: top center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-attachment: fixed;
+  background-color: #222135;
+  background: linear-gradient(125deg, #141326 0%, #222135 35%, #494772 100%);
+  -ms-overflow-style: none; /* IE and Edge */
+  // scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: #4567b3;
+  transform-origin: 0%;
+  z-index: 12324;
 }
 
 img {
