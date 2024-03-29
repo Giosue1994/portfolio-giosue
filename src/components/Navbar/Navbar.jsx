@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { MENU, SOCIAL } from "../data";
 import classes from "./Navbar.module.scss";
+import Menu from "./Menu";
+import SocialIcons from "../UI/SocialIcons";
 
 export default function Navbar() {
-  const [activeLink, setActiveLink] = useState("home");
   const [blur, setBlur] = useState(false);
 
   useEffect(() => {
@@ -17,10 +16,6 @@ export default function Navbar() {
       }
     });
   }, []);
-
-  function handleClickMenu(value) {
-    setActiveLink(value.toLocaleLowerCase());
-  }
 
   let headerBlur;
 
@@ -58,47 +53,11 @@ export default function Navbar() {
             <a href="#home">GL</a>
           </motion.div>
           <nav className={classes.navbar}>
-            <ul>
-              {MENU.map((item) => (
-                <li
-                  key={item.link}
-                  className={
-                    activeLink === item.name.toLocaleLowerCase()
-                      ? classes.active
-                      : undefined
-                  }
-                >
-                  <a
-                    href={item.link}
-                    onClick={() => handleClickMenu(item.name)}
-                  >
-                    {item.name}
-                  </a>
-                  {activeLink === item.name.toLocaleLowerCase() && (
-                    <motion.div
-                      layoutId="menu-indicator"
-                      className="active-menu-indicator"
-                    />
-                  )}
-                </li>
-              ))}
-            </ul>
+            <Menu />
           </nav>
         </div>
         <div className={classes["right-col"]}>
-          <ul className="social-icons">
-            {SOCIAL.map((item) => (
-              <li key={item.link}>
-                <motion.a
-                  whileHover={{ backgroundColor: "#4567b3" }}
-                  href={item.link}
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={item.icon} />
-                </motion.a>
-              </li>
-            ))}
-          </ul>
+          <SocialIcons />
           <motion.a
             href="#contacts"
             whileHover={{

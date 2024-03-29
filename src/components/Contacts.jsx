@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 
-import Input from "./Input";
+import Input from "./UI/Input";
 import { isEmail, isNotEmpty, hasMinLength } from "../util/validation";
 import contactImg from "../assets/contact-img.svg";
 import classes from "./Contacts.module.scss";
@@ -65,10 +65,10 @@ export default function Contacts() {
     <section id="contacts" className={classes.contacts}>
       <Container>
         <Row className="align-items-center">
-          <Col>
+          <Col sm={12} md={6} className={classes["image-col"]}>
             <img src={contactImg} alt="immagine contatti" />
           </Col>
-          <Col>
+          <Col sm={12} md={6}>
             <h2>Get in touch</h2>
             <form onSubmit={handleSubmit}>
               <Row>
@@ -120,18 +120,39 @@ export default function Contacts() {
               </Row>
               <div className={classes.control}>
                 <label htmlFor="terms-and-conditions">
-                  <input
-                    type="checkbox"
-                    id="terms-and-conditions"
-                    name="terms"
-                    required
-                  />
+                  <div className={classes["check-container"]}>
+                    <input
+                      type="checkbox"
+                      id="terms-and-conditions"
+                      name="terms"
+                      required
+                    />
+                    <svg viewBox="0 0 35.6 35.6">
+                      <circle
+                        className={classes["check-bg"]}
+                        cx="17.8"
+                        cy="17.8"
+                        r="17.8"
+                      ></circle>
+                      <circle
+                        className={classes["check-stroke"]}
+                        cx="17.8"
+                        cy="17.8"
+                        r="14.37"
+                      ></circle>
+                      <polyline
+                        className={classes.check}
+                        points="11.78 18.12 15.55 22.23 25.17 12.87"
+                      ></polyline>
+                    </svg>
+                  </div>
                   <span>I agree to the terms and conditions</span>
                 </label>
               </div>
 
               <div className={classes.submit}>
                 <motion.button
+                  className={classes.button}
                   whileHover={{
                     boxShadow: "0px 0px 10px 0px rgba(0,0,0,.5)",
                     scale: 1.05,

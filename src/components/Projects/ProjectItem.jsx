@@ -4,7 +4,7 @@ import classes from "./ProjectItem.module.scss";
 
 export default function ProjectItem({ project }) {
   return (
-    <Col xs={12} md={4} className={classes["project-box"]}>
+    <Col xs={12} sm={6} md={4} className={classes["project-box"]}>
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}

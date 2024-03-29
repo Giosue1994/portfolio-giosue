@@ -7,19 +7,8 @@
   position: fixed;
   z-index: 2;
 
-  ul {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-
-    li {
-      list-style: none;
-      a {
-        text-decoration: none;
-        color: #fff;
-      }
-    }
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 
   .left-col {
@@ -39,27 +28,6 @@
 
     .navbar {
       margin-left: 30px;
-
-      li {
-        margin-right: 30px;
-        position: relative;
-
-        a {
-          transition: 0.3s ease;
-        }
-
-        &:hover {
-          a {
-            color: #b8c9ef;
-          }
-        }
-
-        &.active {
-          a {
-            color: #b8c9ef;
-          }
-        }
-      }
     }
   }
   .right-col {
