@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { MobileView, isMobile } from "react-device-detect";
+// import { isMobile } from "react-device-detect";
 import { motion } from "framer-motion";
+import useWindowResize from "../../hooks/useWindowsResize";
 import MenuItem from "./MenuItem";
 import { MENU } from "../../data";
 import SocialIcons from "../UI/SocialIcons";
 
 import classes from "./Menu.module.scss";
+
+const MAX_MOBILE_WIDTH = 767;
 
 const variants = {
   open: {
@@ -18,6 +21,7 @@ const variants = {
 
 export default function Menu() {
   const [activeLink, setActiveLink] = useState("home");
+  const isMobile = useWindowResize(MAX_MOBILE_WIDTH);
 
   function handleClickMenu(value) {
     setActiveLink(value.toLocaleLowerCase());
@@ -42,24 +46,24 @@ export default function Menu() {
             isActive={activeLink}
           />
         ))}
-        <MobileView>
+        {isMobile && (
           <MenuItem
             name="Contact me"
             link="#contacts"
             onActive={handleClickMenu}
             isActive={activeLink}
           />
-        </MobileView>
+        )}
       </ul>
 
-      <MobileView>
+      {isMobile && (
         <motion.div
           className={classes["social-icons-mobile"]}
           variants={variants}
         >
           <SocialIcons />
         </motion.div>
-      </MobileView>
+      )}
     </motion.div>
   );
 }
