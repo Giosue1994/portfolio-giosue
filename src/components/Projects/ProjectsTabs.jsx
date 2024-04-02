@@ -28,7 +28,7 @@ function Tab({ onSelect, children, isSelected }) {
 
 export default function ProjectsTabs({ projects, onSelectType, selectedType }) {
   return (
-    <menu data-aos="zoom-out-up">
+    <menu>
       <ul className={classes.tabs}>
         {projects.map((projectsType) => (
           <Tab

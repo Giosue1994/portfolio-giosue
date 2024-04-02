@@ -35,10 +35,8 @@ export default function Projects() {
       <Container>
         <Row>
           <Col>
-            <h2 data-aos="zoom-out-up">Projects</h2>
-            <p data-aos="zoom-out-up">
-              Here some projects I&apos;ve worked on.
-            </p>
+            <h2>Projects</h2>
+            <p>Here some projects I&apos;ve worked on.</p>
           </Col>
         </Row>
 

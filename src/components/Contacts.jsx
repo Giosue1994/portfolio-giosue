@@ -70,7 +70,7 @@ export default function Contacts() {
 
   return (
     <section id="contacts" className={classes.contacts}>
-      <Container data-aos="zoom-out-up">
+      <Container>
         <Row className="align-items-center">
           <Col sm={12} md={6} className={classes["image-col"]}>
             <img src={contactImg} alt="immagine contatti" />

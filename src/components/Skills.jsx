@@ -72,7 +72,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <section data-aos="zoom-out-up" id="skills" className={classes.skills}>
+    <section id="skills" className={classes.skills}>
       <Container>
         <div className={classes["skills-box"]}>
           <Row>
@@ -89,11 +89,7 @@ export default function Skills() {
                 <swiper-container init="false" ref={swiperElRef}>
                   {SKILLS.map((skill) => (
                     <swiper-slide key={skill.name}>
-                      <div
-                        className={classes["skill-item"]}
-                        data-aos="zoom-out-up"
-                        data-aos-delay="100"
-                      >
+                      <div className={classes["skill-item"]}>
                         <img src={skill.image} alt={skill.name} />
                         <p>{skill.name}</p>
                       </div>
