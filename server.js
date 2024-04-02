@@ -10,7 +10,8 @@ app.use(cors());
 app.use(json());
 dotenv.config();
 app.use("/", router);
-app.listen(5000, () => console.log("Server Running"));
+const port = process.env.LISTEN_PORT || 5000;
+app.listen(port, () => console.log("Server Running"));
 
 const contactEmail = createTransport({
   host: process.env.EMAIL_HOST,
