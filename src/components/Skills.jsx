@@ -3,7 +3,8 @@ import { useRef, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import { register } from "swiper/element/bundle";
-import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import { SKILLS } from "../data";
 import classes from "./Skills.module.scss";
@@ -28,14 +29,33 @@ export default function Skills() {
   const swiperElRef = useRef(null);
 
   useEffect(() => {
+    AOS.init();
+  }, []);
+
+  useEffect(() => {
     register();
 
     const swiperParams = {
       slidesPerView: 3,
       navigation: true,
       pagination: true,
+      injectStyles: [
+        `
+          .swiper-button-next,
+          .swiper-button-prev {
+            color: #4567b3;
+            svg {
+              width: 30px;
+              height: 30px;
+            }
+          }
+          .swiper-pagination-bullet{
+            background-color: #4567b3;
+          }
+      `,
+      ],
       breakpoints: {
-        420: {
+        320: {
           slidesPerView: 1,
         },
         640: {
@@ -52,19 +72,13 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className={classes.skills}>
+    <section data-aos="zoom-out-up" id="skills" className={classes.skills}>
       <Container>
         <div className={classes["skills-box"]}>
           <Row>
             <Col>
               <div className={classes["text-content"]}>
                 <h2>Skills</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Eligendi deserunt excepturi velit. Error quidem sequi sapiente
-                  ipsum officia aspernatur excepturi quod nostrum ex dignissimos
-                  doloremque, aut aliquid! Officiis, nobis. Unde!
-                </p>
               </div>
             </Col>
           </Row>
@@ -75,32 +89,12 @@ export default function Skills() {
                 <swiper-container init="false" ref={swiperElRef}>
                   {SKILLS.map((skill) => (
                     <swiper-slide key={skill.name}>
-                      <div className={classes["skill-item"]}>
-                        <motion.svg
-                          width="150"
-                          height="150"
-                          viewBox="0 0 150 150"
-                          initial="hidden"
-                          animate="visible"
-                        >
-                          <motion.circle
-                            cx="75"
-                            cy="75"
-                            r="60"
-                            stroke="#4567b3"
-                            variants={draw(skill.level)}
-                            custom={1}
-                          />
-                          <text
-                            x="55px"
-                            y="120px"
-                            fill="#b8c9ef"
-                            fontSize="32px"
-                            fontWeight="bold"
-                          >
-                            {skill.level * 100}%
-                          </text>
-                        </motion.svg>
+                      <div
+                        className={classes["skill-item"]}
+                        data-aos="zoom-out-up"
+                        data-aos-delay="100"
+                      >
+                        <img src={skill.image} alt={skill.name} />
                         <p>{skill.name}</p>
                       </div>
                     </swiper-slide>

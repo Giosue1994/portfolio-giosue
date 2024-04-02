@@ -25,7 +25,7 @@ export default function Navbar() {
       backgroundColor: "rgba(69, 104, 179, 0.5)",
       boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.5)",
       borderRadius: "50px",
-      top: "10px",
+      top: "20px",
       padding: "10px 30px",
     };
   } else {

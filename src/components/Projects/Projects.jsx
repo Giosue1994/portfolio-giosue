@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { AnimatePresence } from "framer-motion";
 
@@ -8,17 +8,23 @@ import classes from "./Projects.module.scss";
 import ProjectsTabs from "./ProjectsTabs.jsx";
 import ProjectItem from "./ProjectItem.jsx";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function Projects() {
   const [projectsTypeSelected, setProjectsTypeSelected] = useState("custom");
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   function handleClickProjectsType(value) {
     setProjectsTypeSelected(value);
   }
 
   const filteredProjects = {
-    custom: PROJECTS.filter((projectsType) => projectsType.type === "custom"),
-    wordpress: PROJECTS.filter(
-      (projectsType) => projectsType.type === "wordpress"
+    [projectsTypeSelected]: PROJECTS.filter(
+      (projectsType) => projectsType.type === projectsTypeSelected
     ),
   };
 
@@ -29,8 +35,10 @@ export default function Projects() {
       <Container>
         <Row>
           <Col>
-            <h2>Projects</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <h2 data-aos="zoom-out-up">Projects</h2>
+            <p data-aos="zoom-out-up">
+              Here some projects I&apos;ve worked on.
+            </p>
           </Col>
         </Row>
 
@@ -42,16 +50,11 @@ export default function Projects() {
           />
 
           <AnimatePresence mode="wait">
-            {displayProjects.length === 0 && (
-              <p key="fallback">Nessuno progetto disponibile</p>
-            )}
-            {displayProjects.length > 0 && (
-              <Row className={classes["projects-grid"]}>
-                {displayProjects[0].projects.map((project) => (
-                  <ProjectItem key={project.name} project={project} />
-                ))}
-              </Row>
-            )}
+            <Row className={classes["projects-grid"]}>
+              {displayProjects[0].projects.map((project) => (
+                <ProjectItem key={project.name} project={project} />
+              ))}
+            </Row>
           </AnimatePresence>
         </div>
       </Container>

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "../../hooks/useDimensions";
 import { MenuToggle } from "./MenuToggle";
@@ -32,18 +32,63 @@ export default function Sidebar() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+  const [blur, setBlur] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 1) {
+        setBlur(true);
+      } else {
+        setBlur(false);
+      }
+    });
+  }, []);
+
+  let logoBlur;
+
+  if (blur) {
+    logoBlur = {
+      backdropFilter: "blur(30px)",
+      backgroundColor: "rgba(69, 104, 179, 0.5)",
+      boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.5)",
+      borderRadius: "50px",
+    };
+  } else {
+    logoBlur = {
+      backdropFilter: "blur(0px)",
+      backgroundColor: "rgba(69, 104, 179, 0)",
+      boxShadow: "0px 0px 0px 0px rgba(0, 0, 0, 0)",
+      borderRadius: "0px",
+    };
+  }
 
   return (
-    <motion.nav
-      className={classes.nav}
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      custom={height}
-      ref={containerRef}
-    >
-      <motion.div className={classes.background} variants={sidebar} />
-      <Menu />
-      <MenuToggle toggle={() => toggleOpen()} />
-    </motion.nav>
+    <>
+      <motion.div
+        animate={logoBlur}
+        whileHover={{ scale: 1.2 }}
+        transition={{ type: "spring", stiffness: 100 }}
+        className={classes.logo}
+      >
+        <a href="#home">GL</a>
+      </motion.div>
+
+      <motion.nav
+        className={classes.nav}
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+      >
+        {isOpen && (
+          <>
+            <motion.div className={classes.background} variants={sidebar} />
+            <Menu />
+          </>
+        )}
+
+        <MenuToggle toggle={() => toggleOpen()} />
+      </motion.nav>
+    </>
   );
 }

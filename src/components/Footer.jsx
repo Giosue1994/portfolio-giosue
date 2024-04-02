@@ -7,10 +7,10 @@ export default function Footer() {
     <footer className={classes.footer}>
       <Container>
         <Row>
-          <Col size={12} sm={4}>
+          <Col xs={4} sm={4}>
             <div className={classes.logo}>GL</div>
           </Col>
-          <Col size={12} sm={8} className="text-center text-sm-end">
+          <Col xs={8} sm={8} className="text-end">
             <SocialIcons />
             <p>Copyright {new Date().getFullYear()}. All Rights Reserved</p>
           </Col>

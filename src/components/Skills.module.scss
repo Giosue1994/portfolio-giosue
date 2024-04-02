@@ -2,6 +2,10 @@
   text-align: center;
   color: #fff;
 
+  h2 {
+    font-size: 50px;
+  }
+
   .skills-box {
     background-color: #18181e;
     padding: 50px;
@@ -14,23 +18,14 @@
 
       .skill-item {
         padding-bottom: 50px;
+        text-align: center;
 
-        svg {
-          transform: rotate(-90deg);
-        }
-
-        circle {
-          margin: 20px auto;
-          stroke-width: 15px;
-          stroke-linecap: round;
-          //   fill: #07070c;
-          fill: transparent;
-        }
-
-        text {
-          top: 50%;
-          left: 50%;
-          transform: rotate(90deg) translate(-13px, -185px);
+        img {
+          width: 100px;
+          margin: auto;
+          background-color: #fff;
+          border-radius: 20%;
+          padding: 10px;
         }
 
         p {

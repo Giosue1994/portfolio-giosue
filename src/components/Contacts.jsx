@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 
@@ -6,6 +6,9 @@ import Input from "./UI/Input";
 import { isEmail, isNotEmpty, hasMinLength } from "../util/validation";
 import contactImg from "../assets/contact-img.svg";
 import classes from "./Contacts.module.scss";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Contacts() {
   const [firstNameIsValid, setFirstNameIsValid] = useState(true);
@@ -15,6 +18,10 @@ export default function Contacts() {
 
   const [buttonText, setButtonText] = useState("Send");
   const [status, setStatus] = useState({});
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -63,7 +70,7 @@ export default function Contacts() {
 
   return (
     <section id="contacts" className={classes.contacts}>
-      <Container>
+      <Container data-aos="zoom-out-up">
         <Row className="align-items-center">
           <Col sm={12} md={6} className={classes["image-col"]}>
             <img src={contactImg} alt="immagine contatti" />

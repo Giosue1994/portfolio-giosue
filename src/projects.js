@@ -13,6 +13,8 @@ import ristorante1905Img from "./assets/wordpress-theme/ristorante1905.png";
 import shuraImg from "./assets/wordpress-theme/shura.png";
 import unionwoodImg from "./assets/wordpress-theme/unionwood.png";
 
+import portfolioImg from "./assets/react-app/portfolio.png";
+
 export const PROJECTS = [
   {
     type: "custom",
@@ -91,19 +93,14 @@ export const PROJECTS = [
       },
     ],
   },
-  // {
-  //   title: "React App",
-  //   projects: [
-  //     {
-  //       name: "Food orders",
-  //       image: "food-orders.png",
-  //       link: "",
-  //     },
-  //     {
-  //       name: "Tic-tac-toe",
-  //       image: "tic-tac-toe.png",
-  //       link: "",
-  //     },
-  //   ],
-  // },
+  {
+    title: "React App",
+    projects: [
+      {
+        name: "Personal Portfolio",
+        image: portfolioImg,
+        link: "/",
+      },
+    ],
+  },
 ];

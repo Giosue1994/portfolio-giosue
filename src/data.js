@@ -4,6 +4,19 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
+import reactImg from "./assets/skills/react.svg";
+import nextJsImg from "./assets/skills/next-js.svg";
+import reduxImg from "./assets/skills/redux.svg";
+import javascriptImg from "./assets/skills/js.svg";
+import wordpressImg from "./assets/skills/wordpress.svg";
+import phpImg from "./assets/skills/php.svg";
+import htmlImg from "./assets/skills/html.svg";
+import cssImg from "./assets/skills/css.svg";
+import bootstrapImg from "./assets/skills/bootstrap.svg";
+import tailwindImg from "./assets/skills/tailwind.svg";
+import laravelImg from "./assets/skills/laravel.svg";
+import jqueryImg from "./assets/skills/jquery.svg";
+
 export const MENU = [
   {
     name: "Home",
@@ -28,27 +41,23 @@ export const SOCIAL = [
     link: "https://github.com/Giosue1994/",
     icon: faGithub,
   },
-  {
-    link: "https://www.instagram.com/giosue94/",
-    icon: faInstagram,
-  },
+  // {
+  //   link: "https://www.instagram.com/giosue94/",
+  //   icon: faInstagram,
+  // },
 ];
 
 export const SKILLS = [
-  {
-    name: "React",
-    level: 0.7,
-  },
-  {
-    name: "Wordpress",
-    level: 0.8,
-  },
-  {
-    name: "Javascript",
-    level: 0.7,
-  },
-  {
-    name: "PHP",
-    level: 0.6,
-  },
+  { name: "React", image: reactImg },
+  { name: "Redux", image: reduxImg },
+  { name: "Next.js", image: nextJsImg },
+  { name: "Tailwind", image: tailwindImg },
+  { name: "Javascript", image: javascriptImg },
+  { name: "jQuery", image: jqueryImg },
+  { name: "HTML", image: htmlImg },
+  { name: "CSS", image: cssImg },
+  { name: "Bootstrap", image: bootstrapImg },
+  { name: "Wordpress", image: wordpressImg },
+  { name: "PHP", image: phpImg },
+  { name: "Laravel", image: laravelImg },
 ];

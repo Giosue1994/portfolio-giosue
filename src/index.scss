@@ -14,9 +14,33 @@ body {
   background: linear-gradient(125deg, #141326 0%, #222135 35%, #494772 100%);
   -ms-overflow-style: none; /* IE and Edge */
   // scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+    margin: 0 20px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: #b8c9ef;
+    }
+
+    &.selected {
+      color: #b8c9ef;
+    }
   }
 }
 
@@ -25,7 +49,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 5px;
+  height: 10px;
   background: #4567b3;
   transform-origin: 0%;
   z-index: 12324;
