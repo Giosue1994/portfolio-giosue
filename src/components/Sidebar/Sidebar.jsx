@@ -1,38 +1,28 @@
-import { useRef, useEffect, useState } from "react";
-import { motion, useCycle } from "framer-motion";
-import { useDimensions } from "../../hooks/useDimensions";
-import { MenuToggle } from "./MenuToggle";
-import Menu from "../Navbar/Menu";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { slide as MobileMenu } from "react-burger-menu";
+import { MENU } from "../../data";
+import MenuItem from "../Navbar/MenuItem";
+import SocialIcons from "../UI/SocialIcons";
 
 import classes from "./Sidebar.module.scss";
 
-const sidebar = {
-  open: (height = 2000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 259px 41px)`,
-    backgroundColor: "rgba(69, 104, 179, 0.5)",
-    transition: {
-      // type: "spring",
-      stiffness: 20,
-      restDelta: 2,
-    },
-  }),
+const variants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
   closed: {
-    clipPath: "circle(25px at 259px 41px)",
-    backgroundColor: "rgba(184, 201, 239, 0.5)",
-    transition: {
-      delay: 0.5,
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
-    },
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 };
 
 export default function Sidebar() {
-  const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
-  const { height } = useDimensions(containerRef);
   const [blur, setBlur] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
+
+  function handleClickMenu(value) {
+    setActiveLink(value.toLocaleLowerCase());
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -73,22 +63,33 @@ export default function Sidebar() {
         <a href="#home">GL</a>
       </motion.div>
 
-      <motion.nav
-        className={classes.nav}
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        custom={height}
-        ref={containerRef}
-      >
-        {isOpen && (
-          <>
-            <motion.div className={classes.background} variants={sidebar} />
-            <Menu />
-          </>
-        )}
+      <div className={classes.nav}>
+        <MobileMenu right>
+          <motion.ul variants={variants}>
+            {MENU.map((item) => (
+              <MenuItem
+                classItem="item"
+                name={item.name}
+                link={item.link}
+                key={item.link}
+                onActive={handleClickMenu}
+                isActive={activeLink}
+              />
+            ))}
+            <MenuItem
+              classItem="item"
+              name="Contact me"
+              link="#contacts"
+              onActive={handleClickMenu}
+              isActive={activeLink}
+            />
+          </motion.ul>
 
-        <MenuToggle toggle={() => toggleOpen()} />
-      </motion.nav>
+          <motion.div className={classes["social-icons-mobile"]}>
+            <SocialIcons />
+          </motion.div>
+        </MobileMenu>
+      </div>
     </>
   );
 }

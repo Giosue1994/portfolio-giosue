@@ -18,7 +18,13 @@ const variants = {
   },
 };
 
-export default function MenuItem({ name, link, onActive, isActive }) {
+export default function MenuItem({
+  name,
+  link,
+  onActive,
+  isActive,
+  classItem,
+}) {
   let itemClass = classes["menu-item"];
 
   if (isActive === name.toLocaleLowerCase()) {
@@ -27,7 +33,7 @@ export default function MenuItem({ name, link, onActive, isActive }) {
 
   return (
     <motion.li
-      className={itemClass}
+      className={`${itemClass} ${classItem}`}
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}

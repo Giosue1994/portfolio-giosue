@@ -1,14 +1,9 @@
 import { useState } from "react";
-// import { isMobile } from "react-device-detect";
 import { motion } from "framer-motion";
-import useWindowResize from "../../hooks/useWindowsResize";
 import MenuItem from "./MenuItem";
 import { MENU } from "../../data";
-import SocialIcons from "../UI/SocialIcons";
 
 import classes from "./Menu.module.scss";
-
-const MAX_MOBILE_WIDTH = 767;
 
 const variants = {
   open: {
@@ -21,22 +16,14 @@ const variants = {
 
 export default function Menu() {
   const [activeLink, setActiveLink] = useState("home");
-  const isMobile = useWindowResize(MAX_MOBILE_WIDTH);
 
   function handleClickMenu(value) {
     setActiveLink(value.toLocaleLowerCase());
   }
 
   return (
-    <motion.div
-      className={isMobile ? classes["mobile-menu"] : classes.menu}
-      variants={variants}
-    >
-      <ul
-        className={
-          isMobile ? classes["list-menu-mobile"] : classes["list-menu"]
-        }
-      >
+    <motion.div className={classes.menu} variants={variants}>
+      <ul className={classes["list-menu"]}>
         {MENU.map((item) => (
           <MenuItem
             name={item.name}
@@ -46,24 +33,7 @@ export default function Menu() {
             isActive={activeLink}
           />
         ))}
-        {isMobile && (
-          <MenuItem
-            name="Contact me"
-            link="#contacts"
-            onActive={handleClickMenu}
-            isActive={activeLink}
-          />
-        )}
       </ul>
-
-      {isMobile && (
-        <motion.div
-          className={classes["social-icons-mobile"]}
-          variants={variants}
-        >
-          <SocialIcons />
-        </motion.div>
-      )}
     </motion.div>
   );
 }

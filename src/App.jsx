@@ -18,16 +18,21 @@ function App() {
 
   return (
     <>
-      <motion.div className="progress-bar" style={{ scaleX }} />
-      <Sidebar />
-      <Navbar />
-      <main>
-        <Banner />
-        <Skills />
-        <Projects />
-      </main>
-      <Contacts />
-      <Footer />
+      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
+
+      <div id="page-wrap">
+        <motion.div className="progress-bar" style={{ scaleX }} />
+        <Navbar />
+
+        <main>
+          <Banner />
+          <Skills />
+          <Projects />
+        </main>
+
+        <Contacts />
+        <Footer />
+      </div>
     </>
   );
 }
