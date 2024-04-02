@@ -79,7 +79,7 @@ export default function Sidebar() {
             <MenuItem
               classItem="item"
               name="Contact me"
-              link="#contacts"
+              link="mailto:giosuelentini94@outlook.com"
               onActive={handleClickMenu}
               isActive={activeLink}
             />

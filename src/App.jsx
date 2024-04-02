@@ -1,5 +1,5 @@
 import Banner from "./components/Banner";
-import Contacts from "./components/Contacts";
+// import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
@@ -30,7 +30,7 @@ function App() {
           <Projects />
         </main>
 
-        <Contacts />
+        {/* <Contacts /> */}
         <Footer />
       </div>
     </>
