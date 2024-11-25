@@ -1,5 +1,9 @@
 import andersenImg from "./assets/custom-theme/andersen.png";
-import nativusImg from "./assets/custom-theme/nativus.png";
+import andersenPrintImg from "./assets/custom-theme/andersen-print.png";
+import interlacedImg from "./assets/custom-theme/interlaced.png";
+import plusImg from "./assets/custom-theme/plus.png";
+import smtImg from "./assets/custom-theme/smt.png";
+// import nativusImg from "./assets/custom-theme/nativus.png";
 import maddalenaImg from "./assets/custom-theme/maddalena.png";
 import leonardoImg from "./assets/custom-theme/leonardo-tranciati.png";
 import bizawayImg from "./assets/custom-theme/bizaway.png";
@@ -21,15 +25,35 @@ export const PROJECTS = [
     title: "Custom Theme",
     projects: [
       {
+        name: "Interlaced",
+        image: interlacedImg,
+        link: "https://www.interlaced.it/",
+      },
+      {
         name: "Andersen",
         image: andersenImg,
         link: "https://andersen.media/",
       },
       {
-        name: "Nativus",
-        image: nativusImg,
-        link: "https://www.resinenativus.it/",
+        name: "Andersen Print",
+        image: andersenPrintImg,
+        link: "https://www.andersenprint.it/",
       },
+      {
+        name: "SMT Smart Media Tool",
+        image: smtImg,
+        link: "https://www.smt.cloud/",
+      },
+      {
+        name: "Plus",
+        image: plusImg,
+        link: "https://plusrl.com/",
+      },
+      // {
+      //   name: "Nativus",
+      //   image: nativusImg,
+      //   link: "https://www.resinenativus.it/",
+      // },
       {
         name: "Maddalena",
         image: maddalenaImg,
@@ -94,12 +118,12 @@ export const PROJECTS = [
     ],
   },
   {
-    title: "React App",
+    title: "React/React Native App",
     projects: [
       {
         name: "Personal Portfolio",
         image: portfolioImg,
-        link: "/",
+        link: "https://github.com/Giosue1994/portfolio-giosue",
       },
     ],
   },
