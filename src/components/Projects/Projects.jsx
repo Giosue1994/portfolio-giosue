@@ -28,6 +28,10 @@ export default function Projects() {
     ),
   };
 
+  const projectType = PROJECTS.filter(
+    (projectsType) => projectsType.type === projectsTypeSelected
+  );
+
   const displayProjects = filteredProjects[projectsTypeSelected];
 
   return (
@@ -50,7 +54,11 @@ export default function Projects() {
           <AnimatePresence mode="wait">
             <Row className={classes["projects-grid"]}>
               {displayProjects[0].projects.map((project) => (
-                <ProjectItem key={project.name} project={project} />
+                <ProjectItem
+                  key={project.name}
+                  type={projectType[0].type}
+                  project={project}
+                />
               ))}
             </Row>
           </AnimatePresence>

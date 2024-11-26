@@ -18,6 +18,17 @@ import shuraImg from "./assets/wordpress-theme/shura.png";
 import unionwoodImg from "./assets/wordpress-theme/unionwood.png";
 
 import portfolioImg from "./assets/react-app/portfolio.png";
+import tttImg from "./assets/react-app/tic-tac-toe.png";
+import investmentImg from "./assets/react-app/investment.png";
+import countdownGameImg from "./assets/react-app/countdown-game.png";
+import projectManagementImg from "./assets/react-app/project-management.png";
+import foodOrderImg from "./assets/react-app/food-order.png";
+
+import guessNumberImg from "./assets/react-native-app/guess-number.png";
+import mealsAppImg from "./assets/react-native-app/meals-app.png";
+import expenseTrackerImg from "./assets/react-native-app/expense-tracker.png";
+import favouritePlacesImg from "./assets/react-native-app/favourite-places.png";
+import calculatorImg from "./assets/react-native-app/calculator.png";
 
 export const PROJECTS = [
   {
@@ -118,12 +129,69 @@ export const PROJECTS = [
     ],
   },
   {
-    title: "React/React Native App",
+    type: "react",
+    title: "React",
     projects: [
       {
         name: "Personal Portfolio",
         image: portfolioImg,
         link: "https://github.com/Giosue1994/portfolio-giosue",
+      },
+      {
+        name: "Food order",
+        image: foodOrderImg,
+        link: "https://github.com/Giosue1994/react-food-order-app-demo",
+      },
+      {
+        name: "Tic Tac Toe",
+        image: tttImg,
+        link: "https://github.com/Giosue1994/react-tic-tac-toe",
+      },
+      {
+        name: "Countdown game",
+        image: countdownGameImg,
+        link: "https://github.com/Giosue1994/react-refs-portals",
+      },
+      {
+        name: "Investment app",
+        image: investmentImg,
+        link: "https://github.com/Giosue1994/react-investment-app",
+      },
+      {
+        name: "Project management",
+        image: projectManagementImg,
+        link: "https://github.com/Giosue1994/react-project-management-app",
+      },
+    ],
+  },
+  {
+    type: "react-native",
+    title: "React Native",
+    projects: [
+      {
+        name: "Guess number",
+        image: guessNumberImg,
+        link: "https://github.com/Giosue1994/react-native-guess-game",
+      },
+      {
+        name: "Meals app",
+        image: mealsAppImg,
+        link: "https://github.com/Giosue1994/react-native-meals-app",
+      },
+      {
+        name: "Expense tracker",
+        image: expenseTrackerImg,
+        link: "https://github.com/Giosue1994/react-native-expense-tracker-app",
+      },
+      {
+        name: "Favourite places",
+        image: favouritePlacesImg,
+        link: "https://github.com/Giosue1994/react-native-favorite-places",
+      },
+      {
+        name: "Calculator",
+        image: calculatorImg,
+        link: "https://github.com/Giosue1994/RN-calculator",
       },
     ],
   },

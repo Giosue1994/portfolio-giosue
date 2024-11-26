@@ -5,13 +5,18 @@ import classes from "./ProjectItem.module.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function ProjectItem({ project }) {
+export default function ProjectItem({ project, type }) {
   useEffect(() => {
     AOS.init();
   }, []);
 
   return (
-    <Col xs={12} sm={6} md={4} className={classes["project-box"]}>
+    <Col
+      xs={type === "react-native" ? 6 : 12}
+      sm={type === "react-native" ? 4 : 6}
+      md={type === "react-native" ? 3 : 4}
+      className={classes["project-box"]}
+    >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
