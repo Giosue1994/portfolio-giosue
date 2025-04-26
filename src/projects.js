@@ -17,6 +17,8 @@ import ristorante1905Img from "./assets/wordpress-theme/ristorante1905.png";
 import shuraImg from "./assets/wordpress-theme/shura.png";
 import unionwoodImg from "./assets/wordpress-theme/unionwood.png";
 
+import haxiaImg from "./assets/next/haxia.png";
+
 import portfolioImg from "./assets/react-app/portfolio.png";
 import tttImg from "./assets/react-app/tic-tac-toe.png";
 import investmentImg from "./assets/react-app/investment.png";
@@ -125,6 +127,17 @@ export const PROJECTS = [
         name: "Revisioni Coslovich",
         image: coslovichImg,
         link: "https://revisionicoslovich.com/",
+      },
+    ],
+  },
+  {
+    type: "next",
+    title: "Next.js",
+    projects: [
+      {
+        name: "Haxia",
+        image: haxiaImg,
+        link: "https://www.haxia-network.it/",
       },
     ],
   },
