@@ -1,8 +1,4 @@
-import {
-  faLinkedinIn,
-  faGithub,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import reactImg from "./assets/skills/react.svg";
 import nextJsImg from "./assets/skills/next-js.svg";
@@ -14,7 +10,6 @@ import htmlImg from "./assets/skills/html.svg";
 import cssImg from "./assets/skills/css.svg";
 import bootstrapImg from "./assets/skills/bootstrap.svg";
 import tailwindImg from "./assets/skills/tailwind.svg";
-import laravelImg from "./assets/skills/laravel.svg";
 import jqueryImg from "./assets/skills/jquery.svg";
 
 export const MENU = [
@@ -48,9 +43,9 @@ export const SOCIAL = [
 ];
 
 export const SKILLS = [
+  { name: "Next.js", image: nextJsImg },
   { name: "React", image: reactImg },
   { name: "Redux", image: reduxImg },
-  { name: "Next.js", image: nextJsImg },
   { name: "Tailwind", image: tailwindImg },
   { name: "Javascript", image: javascriptImg },
   { name: "jQuery", image: jqueryImg },
@@ -59,5 +54,4 @@ export const SKILLS = [
   { name: "Bootstrap", image: bootstrapImg },
   { name: "Wordpress", image: wordpressImg },
   { name: "PHP", image: phpImg },
-  { name: "Laravel", image: laravelImg },
 ];
